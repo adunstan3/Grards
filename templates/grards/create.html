@@ -1,0 +1,60 @@
+{% extends "grards/base.html" %}
+{% load static %}
+
+{% block headContent %}
+    <title>Grards | Create Game</title>
+    <link rel="stylesheet" href="{% static 'grards/css/create.css' %}">
+{% endblock headContent %}
+
+{% block bodyContent %}
+    <!-- page text -->
+    <p class = "title">Create Game</p>
+
+    <!-- backArrow image button back to home -->
+    <a href= "{% url 'grards-landing' %}">
+      <div class="backArrow"
+          style="background-image: url(
+            {% static 'grards/images/backArrow.png' %}
+           );">
+      </div>
+    </a>
+
+    <form class="" action="{% url 'grards-create' %}" method="post">
+      {% csrf_token %}
+
+      <!-- username input -->
+      <label for="user-name" class="userNameLable">User Name</label>
+      <input type="text" name="userNameInput" value="" class="userNameInput">
+
+      <!-- radio selector for picking the card set to play with -->
+      <p class="cardsetLabel">Cardset To Use:</p>
+
+      <input type="radio" id="gardsCards" name="card-type" value="grards" checked class="grardRadio">
+      <label for="gardsCards" class="grardLable">Grards (NSFW)</label>
+
+      <input type="radio" id="cahCards" name="card-type" value="cahCards" class="cahRadio">
+      <label for="cahCards" class="cahLable">CAH (NSFW)</label>
+
+      <input type="radio" id="applesCards" name="card-type" value="applesCards" class="applesRadio">
+      <label for="applesCards" class="applesLable">Apples To Apples</label>
+
+      <!-- error messages if something goes wrong -->
+      {% if error == 'blankUser' %}
+        <p class="errorCode">Please do not enter a blank user name</p>
+      {%endif%}
+
+      <!-- create button that submits the form -->
+      <button type="submit" name="button" style="visibility: hidden;">
+          <div class="grardButton createButton" style="visibility: visible;">
+            <p class= "buttonText">Create</p>
+          </div>
+      </button>
+
+    </form>
+
+    <!-- empty divs that will be turned into lines with css -->
+    <div class="line line1"></div>
+    <div class="line line2"></div>
+    <div class="line line3"></div>
+
+{% endblock bodyContent %}

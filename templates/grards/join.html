@@ -1,0 +1,59 @@
+{% extends "grards/base.html" %}
+{% load static %}
+
+{% block headContent %}
+    <title>Grards | Join Game</title>
+    <link rel="stylesheet" href="{% static 'grards/css/join.css' %}">
+{% endblock headContent %}
+
+{% block bodyContent %}
+    <!-- page text -->
+    <p class = "title">Join Game</p>
+
+    <p class="description">Enter a user name, and the game code then click join</p>
+
+    <!-- backArrow image button back to home -->
+    <a href= "{% url 'grards-landing' %}">
+      <div class="backArrow"
+          style="background-image: url(
+            {% static 'grards/images/backArrow.png' %}
+           );">
+      </div>
+    </a>
+
+    <form class="" action="{% url 'grards-join' %}" method="post">
+      {% csrf_token %}
+
+      <label for="user-name" class="userNameLable">User Name</label>
+
+      <input type="text" name="user-name" value="{{userName}}" class="userNameInput">
+
+      <label for="game-code" class="gameCodeLable">Game Code</label>
+
+      <input type="text" name="game-code" value="{{gameCode}}" class="gameCodeInput">
+
+
+      {% if error == 'badGameCode' %}
+        <p class="errorCode">Sorry {{userName}}, There is no game for game code: {{gameCode}}</p>
+      {% elif error == 'badUserName' %}
+        <p class="errorCode">Sorry {{userName}}, The game you are joining already has a player named {{userName}}.
+          Please pick a unique userName.</p>
+      {% elif error == 'roundInProgress' %}
+        <p class="errorCode">Sorry {{userName}}, The game you are joining has a round in progress.
+          Please wait till the round is over to join</p>
+      {% elif error == 'blankUser' %}
+        <p class="errorCode">Please do not enter a blank user name</p>
+      {%endif%}
+
+
+      <button type="submit" name="button" style="visibility: hidden;">
+          <div class="grardButton joinButton" style="visibility: visible;">
+            <p class= "buttonText">Join</p>
+          </div>
+      </button>
+
+    </form>
+
+    <div class="line"></div>
+
+{% endblock bodyContent %}

@@ -1,0 +1,58 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Grards | Game</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="{% static 'grards/css/game.css' %}">
+  </head>
+  
+  <body>
+    <div class="game-header">
+      <h1>Game Code: {{gameCode}} | User Name: {{userName}}</h1>
+
+      <h2 id='phaseWaiting' >Game Phase: Waiting to start round</h2>
+      <h2 id='phaseSubmit' hidden>Game Phase: Submit your white cards</h2>
+      <h2 id='phaseJudging' hidden>Game Phase: Judging</h2>
+    </div>
+
+    <div class="playerData">
+      <h2 class="player-list-tital">Players: </h2> <br>
+      <div class="playerLegend">
+        <p>No Task: <span class="no-task-color">&#9608;</span> </p>
+        <p>Judge: <span class="judge-color">&#9608;</span></p>
+        <p>Need To Play: <span class="need-to-play-color">&#9608;</span></p>
+      </div>
+    </div>
+
+    <div class="lower-corner">
+
+      <div class="blackCardContainer" hidden>
+        <h2 class="blackCardContainerTital">Current Black Card:</h2>
+      </div>
+
+      <div class="submittedCardsContainer" hidden>
+        <h2>Submitted Cards</h2>
+      </div>
+
+      <div class="playersCards">
+        <h2>Your Cards:</h2>
+      </div>
+
+      <div class="game-control">
+        <button id="startRoundButton" type="button">Start Round</button>
+        <button id="stopRoundButton" type="button" hidden disabled>Stop Round Early</button>
+        <h4 id="toFewPlayers" hidden><br>Not enough players to start a game! You need at least 3. </h4>
+      </div>
+    </div>
+
+    <a class="leave-game-button" href= "{% url 'grards-landing' %}"> <button class="leave-game-button" type="button"> Leave Game </button> </a>
+
+    {{ gameCode|json_script:"game-code" }}
+    {{ userName|json_script:"user-name" }}
+    <script src= "{% static 'grards/js/reconnecting-websocket.min.js' %}"type="text/javascript"></script>
+    <script src="{% static 'grards/js/game.js' %}" type="text/javascript"></script>
+    <script src="{% static 'grards/js/grardSocket.js' %}" type="text/javascript"></script>
+  </body>
+</html>

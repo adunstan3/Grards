@@ -1,0 +1,67 @@
+{% extends "grards/base.html" %}
+{% load static %}
+
+{% block headContent %}
+    <title>Grards</title>
+    <link rel="stylesheet" href="{% static 'grards/css/home.css' %}">
+{% endblock headContent %}
+
+{% block bodyContent %}
+    <!-- mushroom images -->
+    <!-- the background style is done in the html to take advantage of django's html url completion -->
+    <div class="shroom2"
+        style="background-image: url(
+          {% static 'grards/images/shroom_2.png' %}
+         );">
+    </div>
+
+    <div class="shroom3"
+       style="background-image: url(
+         {% static 'grards/images/shroom_3.png' %}
+        );">
+    </div>
+
+    <div class="shroom4"
+        style="background-image: url(
+          {% static 'grards/images/shroom_4.png' %}
+         );">
+    </div>
+
+    <!-- this mushroom image is a hidden button that starts a test game -->
+    <!-- the button is set to invisible then the internal div is set to visible to get rid of an unwanted small floating button  -->
+    <form action="{% url 'grards-landing' %}" method="post"> {% csrf_token %}
+      <button id="testGameButton" type="submit" name="button"
+              style="visibility: hidden;">
+        <div class="shroom1"
+             style="background-image: url(
+               {% static 'grards/images/shroom_1.png' %}
+              );
+              visibility: visible;">
+        </div>
+      </button>
+    </form>
+
+    <!-- page text -->
+    <p class = "title">Grards</p>
+
+    <p class="description">The <span class="moist">MOIST</span> apples to apples</p>
+
+    <!-- page buttons -->
+    <a href= "{% url 'grards-join' %}">
+      <div class="grardButton joinButton">
+        <p class= "buttonText joinText">Join Game</p>
+      </div>
+    </a>
+
+    <a href= "{% url 'grards-create' %}">
+      <div class="grardButton createButton">
+        <p class= "buttonText">Create Game</p>
+      </div>
+    </a>
+
+    <a href= "{% url 'grards-password' %}">
+      <div class="grardButton viewButton">
+        <p class="buttonText">View/Edit Grards</p>
+      </div>
+    </a>
+{% endblock bodyContent %}

@@ -1,0 +1,298 @@
+
+/* the boarder width is included in input box height so subtract it twice when giving the height in css */
+
+/* SMALL WINDOW */
+@media only screen and (max-width: 750px){
+  .container{width: 500px;}
+
+  .title{
+    position: absolute;
+    width: 405px;
+  height: 100px;
+  left: 48px;
+  top: 13px;
+
+    font-size: 80px;
+    -webkit-text-stroke: 1px black;
+  }
+
+  .description{
+    width: 466px;
+    height: 111px;
+    left: 17px;
+    top: 134px;
+
+    font-size: 35px;
+  }
+
+  .errorCode{
+    width: 460px;
+    height: 117px;
+    left: 20px;
+    top: 607px;
+
+    font-size: 40px;
+    -webkit-text-stroke: 1px #BA1616;
+
+    text-align: center;
+  }
+
+  .joinButton{
+    width: 152px;
+    height: 91px;
+    left: 174px;
+    top: 495px;
+  }
+
+  .buttonText{
+    font-size: 50px;
+  }
+
+  .backArrow{
+    width: 33px;
+    height: 33px;
+    left: 12px;
+    top: 46px;
+
+    background-size: 33px;
+  }
+
+  .userNameLable{
+    width: 218px;
+    height: 82px;
+    left: 18px;
+    top: 306px;
+
+    font-size: 40px;
+  }
+
+  .gameCodeLable{
+    width: 225px;
+    height: 82px;
+    left: 19px;
+    top: 392px;
+
+    font-size: 40px;
+  }
+
+  .userNameInput{
+    width: 215px;
+    height: 59px;
+    left: 259px;
+    top: 306px;
+
+    font-size: 25px;
+  }
+
+  .gameCodeInput{
+    width: 215px;
+    height: 59px;
+    left: 259px;
+    top: 392px;
+
+    font-size: 25px;
+  }
+
+  .line{
+    width: 408px;
+    height: 0px;
+    left: 45px;
+    top: 266.4px;
+  }
+}
+
+/* MEDIUM WINDOW */
+@media only screen and (min-width: 750px) and (max-width: 1200px){
+  .container{width: 750px;}
+
+  .title{
+    width: 513px;
+    height: 119px;
+    left: 119px;
+    top: 25px;
+
+    font-size: 100px;
+    -webkit-text-stroke: 2px black;
+  }
+
+  .description{
+    width: 725px;
+    height: 111px;
+    left: 13px;
+    top: 154px;
+
+    font-size: 45px;
+  }
+
+  .errorCode{
+    width: 695px;
+    height: 139px;
+    left: 24px;
+    top: 584px;
+
+    font-size: 45px;
+    -webkit-text-stroke: 1px #BA1616;
+  }
+
+  .joinButton{
+    width: 152px;
+    height: 91px;
+    left: 560px;
+    top: 411px;
+  }
+
+  .buttonText{
+    font-size: 50px;
+  }
+
+  .backArrow{
+    width: 64px;
+    height: 63px;
+    left: 24px;
+    top: 61px;
+
+    background-size: 64px;
+  }
+
+  .userNameLable{
+    width: 301px;
+    height: 82.19px;
+    left: -15px;
+    top: 378px;
+
+    font-size: 40px;
+  }
+
+  .gameCodeLable{
+    width: 315px;
+    height: 82.19px;
+    left: -15px;
+    top: 480.81px;
+
+    font-size: 40px;
+  }
+
+  .userNameInput{
+    width: 260px;
+    height: 59px;
+    left: 272px;
+    top: 378px;
+
+    font-size: 30px;
+  }
+
+  .gameCodeInput{
+    width: 260px;
+    height: 59px;
+    left: 272px;
+    top: 479px;
+
+    font-size: 30px;
+  }
+
+  .line{
+    width: 643px;
+    height: 0px;
+    left: 45px;
+    top: 324.42px;
+  }
+
+}
+
+/* LARGE WINDOW */
+@media only screen and (min-width: 1200px){
+  .container{width: 1200px;}
+
+  .title{
+    width: 619px;
+    height: 135px;
+    left: 290px;
+    top: 9px;
+
+    font-size: 120px;
+    -webkit-text-stroke: 2px black;
+  }
+
+  .description{
+    width: 1120px;
+    height: 69px;
+    left: 40px;
+    top: 164px;
+
+    font-size: 45px;
+  }
+
+  .errorCode{
+    width: 1067px;
+    height: 90px;
+    left: 102px;
+    top: 563px;
+
+    font-size: 60px;
+    -webkit-text-stroke: 1px #BA1616;
+  }
+
+  .joinButton{
+    width: 200px;
+    height: 121px;
+    left: 875px;
+    top: 338px;
+  }
+
+  .buttonText{
+    font-size: 70px;
+  }
+
+  .backArrow{
+    width: 92px;
+    height: 92px;
+    left: 40px;
+    top: 41px;
+
+    background-size: 92px;
+  }
+
+  .userNameLable{
+    width: 301px;
+    height: 83px;
+    left: 148px;
+    top: 296px;
+
+    font-size: 60px;
+  }
+
+  .gameCodeLable{
+    width: 315px;
+    height: 83px;
+    left: 148px;
+    top: 417px;
+
+    font-size: 60px;
+  }
+
+  .userNameInput{
+    width: 332px;
+    height: 73px;
+    left: 496px;
+    top: 298px;
+
+    font-size: 40px;
+  }
+
+  .gameCodeInput{
+    width: 332px;
+    height: 73px;
+    left: 496px;
+    top: 421px;
+
+    font-size: 40px;
+  }
+
+  .line{
+    height: 293px;
+    width: 0px;
+    left: 79.5px;
+    top: 251px;
+  }
+
+}

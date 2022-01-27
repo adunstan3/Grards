@@ -1,0 +1,115 @@
+*{
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+}
+
+.needToPlay{
+  color: rgb(187, 98, 15);
+}
+
+.grardJudge{
+  color: rgb(0, 98, 15);
+}
+
+.grardDefault{
+  color: black;
+}
+
+.need-to-play-color{
+  color: rgb(187, 98, 15);
+}
+
+.judge-color{
+  color: rgb(0, 98, 15);
+}
+
+.no-task-color{
+  color: black;
+}
+.generalLabel{
+  font-size: 1.3em;
+}
+
+label.selectedGrard{
+  font-weight: bold;
+}
+
+.emptyBlackCard, .filledBlackCard{
+  font-size: 1.3em;
+}
+
+.hidden-object{visibility: hidden}
+
+.leave-game-button{
+  position: fixed;
+  top: 1em;
+  right: 1em;
+}
+.leave-game-button:hover{
+  background-color: rgb(245, 99, 27);
+}
+
+.playerLegend {
+  box-sizing: border-box;
+  border: 2px solid black;
+  border-radius: 15px;
+  padding-left: 1em;
+  padding-top: .5em;
+  padding-bottom: .5em;
+  padding-right: 1em;
+  margin-top: 10%;
+  display: inline-block;
+}
+
+.blackCardContainer, .submittedCardsContainer, .playersCards{
+  border-bottom: 2px solid black;
+  padding-bottom: .7em;
+  padding-left: .5em;
+  padding-top: .7em;
+}
+
+.game-control{
+  padding-top: 1em;
+  text-align: center;
+}
+
+.game-header{
+  font-size: 2vh;
+  position: fixed;
+  text-align: center;
+  height: 9vh;
+  width: 100%;
+  display:block;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  border-bottom: 2px solid black;
+}
+
+.playerData{
+  border-right: 2px solid black;
+  position: fixed;
+  left:1%;
+  top:12vh;
+  width:20%;
+  bottom:0;
+  padding-left: 0;
+}
+
+.general-player{
+  font-size: 1.5em;
+}
+.player-list-tital{
+  text-decoration: underline;
+  text-align: center;
+}
+
+.lower-corner{
+  position: fixed;
+  left: 22%;
+  top:11%;
+  right: 1%;
+}
+
+.generalButton{
+  margin-left: 1em;
+}

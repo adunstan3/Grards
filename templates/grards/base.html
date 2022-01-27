@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+
+    <!-- import css style sheets -->
+    <link rel="stylesheet" href="{% static 'grards/css/main.css' %}">
+
+    <!-- allow media queries on moble devices -->
+    <meta id="vp" name="viewport" content="width=device-width, initial-scale=1">
+    <!-- establish minimum viewport width of 500 px so that phones render correctly -->
+    <script>
+        window.onload = function() {
+            if (screen.width < 500) {
+                var mvp = document.getElementById('vp');
+                mvp.setAttribute('content','user-scalable=no,width=500');
+            }
+        }
+    </script>
+
+    <!-- import google fonts used -->
+    <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/
+      css2?family=Roboto&display=swap" rel="stylesheet">
+
+    <!-- import ajax -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    {% block headContent %} {% endblock %}
+
+  </head>
+
+  <body class = "container">
+      {% block bodyContent %} {% endblock %}
+  </body>
+</html>

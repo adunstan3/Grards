@@ -1,0 +1,104 @@
+.container{
+  margin: 0 auto;
+
+  display: grid;
+  justify-content: space-evenly;
+  align-content: space-evenly;
+  position: relative;
+
+  background: #F7E7CD;
+}
+
+.grardButton{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: #CC7878;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 15px;
+
+  position: absolute;
+}
+
+.grardButton:active, .grardButton:hover{
+  box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.5);
+}
+
+p, label{
+  position: absolute;
+  margin: 0;
+  text-align: center;
+
+  font-family: Architects Daughter;
+  font-style: normal;
+  font-weight: normal;
+
+  color: #000000;
+}
+
+input{
+  border: 3px solid #000000;
+  border-radius: 15px;
+  text-align: center;
+  background: #F0E7D9;
+  position: absolute;
+  padding: 0;
+}
+
+.buttonText{
+  align-items: center;
+  vertical-align: middle;
+}
+
+.errorCode{
+  text-align: left;
+  font-family: Roboto, sans-serif;
+  color: #BA1616;
+}
+
+.backArrow{
+  position: absolute;
+}
+
+.backArrow:active, .backArrow:hover{
+  filter: drop-shadow(1px 6px 4px rgba(0, 0, 0, 0.5));
+}
+
+.line{
+  border: 2px solid #000000;
+  position: absolute;
+}
+
+/* This defines custom styling for radio buttons, heavily borrowed from https://moderncss.dev/pure-css-custom-styled-radio-buttons/ */
+
+input[type="radio"] {
+  /* hide default radio styling */
+  -webkit-appearance: none;
+  appearance: none;
+
+  background-color: #B68282;
+
+  margin: 0;
+
+  border: 2px solid black;
+  border-radius: 50%;
+
+  display: grid;
+  place-content: center;
+}
+
+input[type="radio"]::before {
+  content: "";
+
+  border-radius: 50%;
+  transform: scale(0);
+
+
+  /* Windows High Contrast Mode */
+  background-color: #333232;
+}
+
+input[type="radio"]:checked::before {
+  transform: scale(1);
+}

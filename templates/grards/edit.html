@@ -1,0 +1,200 @@
+{% extends "grards/base.html" %}
+{% load static %}
+
+{% block headContent %}
+    <title>Grards | View/Edit</title>
+    <link rel="stylesheet" href="{% static 'grards/css/edit.css' %}">
+
+    <script>
+      $(document).ready(function(){
+        // control radio that switches between showing white and black list
+        $(".whiteRadio").click(function(){
+          $(".whiteList").show();
+          $(".blackList").hide();
+        });
+        $(".blackRadio").click(function(){
+          $(".whiteList").hide();
+          $(".blackList").show();
+        });
+
+        //bring up window that lets you create grards
+        $('.createButton').click(function(){
+          $(".headBar").hide();
+          $(".createInput").show();
+          $(".whiteList").hide();
+          $(".blackList").hide();
+        });
+
+        //Controll buttons for grard maker
+        $('.cancleButton').click(function(){
+          $("#white").prop("checked", true).trigger("click");
+          $(".white-textarea").val('');
+          $(".createInput").hide();
+          $(".headBar").show();
+          $(".whiteRadio").prop("checked", true).trigger("click");
+        });
+
+        $('.whiteMakerRadio').click(function(){
+          $(".white-input").show();
+          $(".black-input").hide();
+          $(".first_text").val('');
+          $(".last_text").val('');
+        });
+
+        $('.blackMakerRadio').click(function(){
+          $(".white-input").hide();
+          $(".black-input").show();
+          $(".white-textarea").val('');
+        });
+
+        $('.clearButton').click(function(){
+            $(".white-textarea").val('');
+            $(".first_text").val('');
+            $(".last_text").val('');
+        });
+
+        // style grards when mouse hovers over them for computer
+        $('.grardForm').mouseenter(function(e){
+          e.preventDefault();
+          $(this).find('button').css("display","inline");
+          $(this).find('label').css("font-weight","bold");
+        });
+
+        $('.grardForm').mouseleave(function(e){
+          $(".generalButton").css("display","none");
+          $(".generalLabel").css("font-weight","normal");
+        });
+
+        //style each grard on click for phones
+        $('.generalLabel').click(function(e){
+          $(".generalButton").css("display","none");
+          $(".generalLabel").css("font-weight","normal");
+
+          e.preventDefault();
+          $(this).siblings('button').css("display","inline");
+          $(this).css("font-weight","bold");
+        });
+
+
+      });
+    </script>
+
+{% endblock headContent %}
+
+{% block bodyContent %}
+
+    <div class="headBar">
+        <div class="backDrop"></div>
+        <!-- page text -->
+        <p class="title">View/Edit Cards</p>
+
+        <!-- backArrow image button back to home -->
+        <a href= "{% url 'grards-landing' %}">
+          <div class="backArrow"
+              style="background-image: url(
+                {% static 'grards/images/backArrow.png' %}
+               );">
+          </div>
+        </a>
+
+        <!-- radio selector for picking the card set to show -->
+        <p class="cardTypeLabel1">Card Type</p>
+        <p class="cardTypeLabel2">Displayed:</p>
+
+        <input type="radio" name="list-type" value="white" checked class="whiteRadio">
+        <label for="showWhiteCards" class="whiteLable">White</label>
+
+        <input type="radio" name="list-type" value="black" class="blackRadio" >
+        <label for="showBlackCards" class="blackLable">Black</label>
+
+        <!-- create grard button -->
+        <button type="button" style="visibility: hidden;">
+          <div class="grardButton createButton" style="visibility: visible;">
+            <p class= "buttonText">Create Grard</p>
+          </div>
+        </button>
+
+        <!-- empty divs that will be turned into lines with css -->
+        <div class="line line1"></div>
+        <div class="line line2"></div>
+    </div>
+
+    <div class="createInput" hidden>
+      <form action="{% url 'grards-edit' %}" method="post">
+        {%csrf_token%}
+        <p class=makeTitle>Card Maker</p>
+        <label class="makerTogleDesc" >Card type:</label>
+        <input type="radio" name="grard-type" value="white" class="whiteMakerRadio" checked>
+        <label for="white" class="whiteMakerLabel">White</label>
+        <input type="radio" name="grard-type" value="black" class="blackMakerRadio">
+        <label for="black" class="blackMakerLabel">Black</label>
+
+        <!-- description and text input for white and black, togled with the radio button -->
+        <div class="white-input">
+          <p class="whiteMakeDescription">White cards are delt to players and are answers to prompts suplied by black cards.</p>
+          <textarea class="white-textarea textArea" name="white-textarea" rows="8" cols="80"
+            placeholder="Grard Text..."></textarea>
+        </div>
+
+        <div class="black-input" hidden>
+          <p class="blackMakeDescription">Black cards are prompts that players try to answer with white cards. If the black card has a blank that players need to fill put the pre blank text in the first box and the post blank text in the second box. If the card has no blank put all the text in the pre blank box. </p>
+          <textarea class="first_text textArea" name="first_text" rows="8" cols="40"
+            placeholder="Pre-Blank Grard Text..."></textarea>
+          <textarea class="last_text textArea" name="last_text" rows="8" cols="40"
+            placeholder="Post-Blank Grard Text..."></textarea>
+        </div>
+
+        <button type="submit" name="createSubmitButton" class="submitButton grardButton"><p class= "buttonText">Submit</p></button>
+        <button type="button" name="button" class="clearButton grardButton"><p class= "buttonText">Clear</p></button>
+        <button type="button" name="button" class="cancleButton grardButton"><p class= "buttonText">Cancle</p></button>
+
+      </form>
+    </div>
+
+    <!-- TODO: make sure that these errors work out -->
+    <!-- error messages if something goes wrong -->
+    {%if bad_password_atempt%}
+      <p class="errorCode">Incorect password please try again</p>
+    {% endif %}
+
+    <div class="whiteList" >
+      <!-- added to push the top of the list down into view -->
+      <div class="backDrop"></div>
+      <h3 class="listTitle">White Cards:</h3>
+
+      {% for card in whiteCards %}
+      <div class="grardContainer">
+        <form class="grardForm" action="{% url 'grards-edit'%}" method="post">
+          {% csrf_token %}
+          <label class="{{forloop.counter}}label generalLabel">{{ card }}</label>
+          <button class="{{forloop.counter}}button generalButton"type="submit" name="button">Delete</button>
+          <input type="text" name="cardToDelete" value="{{card}}" hidden>
+        </form>
+      </div>
+
+      {% endfor %}
+    </div>
+
+    <div class="blackList" hidden>
+      <!-- added to push the top of the list down into view -->
+      <div class="backDrop"></div>
+      <h3 class="listTitle">Black Cards:</h3>
+
+      {% for card in blackCards %}
+      <div class="grardContainer">
+        <form class="grardForm" action="{% url 'grards-edit'%}" method="post">
+          {% csrf_token %}
+          <label class="{{forloop.counter}}label generalLabel">
+            {{ card }}
+          </label>
+          <button class="button{{forloop.counter}} generalButton"type="submit" name="button">Delete</button>
+          <input type="text" name="cardToDelete" value="{{card}}" hidden>
+        </form>
+      </div>
+
+      {% endfor %}
+    </div>
+
+
+
+{% endblock bodyContent %}

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>This page generates the test game tabs. To remake the test game close the generated tabs
+    and reload this page. </h1>
+    <br><br>
+
+    <a href= "{% url 'grards-landing' %}"> <button type="button"> Back to Landing </button> </a>
+
+    <script type="text/javascript">
+      window.open("{% url 'grards-game' gameCode='test' userName='Andrew' %}", '_blank');
+      window.open("{% url 'grards-game' gameCode='test' userName='Bill' %}", '_blank');
+      window.open("{% url 'grards-game' gameCode='test' userName='Teddy' %}", '_blank');
+      window.open("{% url 'grards-game' gameCode='test' userName='Frank' %}", '_blank');
+    </script>
+  </body>
+</html>

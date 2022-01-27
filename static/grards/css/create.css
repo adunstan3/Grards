@@ -1,0 +1,451 @@
+/* the boarder width is included in input box height so subtract it twice when giving the height in css */
+
+/* SMALL WINDOW */
+@media only screen and (max-width: 750px){
+  .container{width: 500px;}
+
+  .title{
+    width: 367px;
+    height: 72px;
+    left: 67px;
+    top: 25px;
+
+    font-size: 55px;
+    -webkit-text-stroke: 1.5px black;
+  }
+
+  .errorCode{
+    width: 463px;
+    height: 120px;
+    left: 19px;
+    top: 612px;
+
+    font-size: 40px;
+    -webkit-text-stroke: 1px #BA1616;
+
+    text-align: center;
+  }
+
+  .createButton{
+    width: 200px;
+    height: 84px;
+    left: 150px;
+    top: 504px;
+  }
+
+  .buttonText{
+    font-size: 45px;
+  }
+
+  .backArrow{
+    width: 33px;
+    height: 33px;
+    left: 22px;
+    top: 41px;
+
+    background-size: 33px;
+  }
+
+  .userNameLable{
+    width: 218px;
+    height: 54px;
+    left: 22px;
+    top: 117px;
+
+    font-size: 40px;
+  }
+
+  .cardsetLabel{
+    width: 399px;
+    height: 61px;
+    left: 51px;
+    top: 203px;
+
+    font-size: 50px;
+    text-decoration-line: underline;
+    -webkit-text-stroke: .5px black;
+  }
+
+  .grardLable{
+    width: 297px;
+    height: 67px;
+    left: 111px;
+    top: 272px;
+
+    font-size: 40px;
+    text-align: left;
+  }
+
+  .cahLable{
+    width: 252px;
+    height: 62px;
+    left: 111px;
+    top: 339px;
+
+    font-size: 40px;
+    text-align: left;
+  }
+
+  .applesLable{
+    width: 320px;
+    height: 68px;
+    left: 111px;
+    top: 401px;
+
+    font-size: 40px;
+    text-align: left;
+  }
+
+  .userNameInput{
+    width: 215px;
+    height: 59px;
+    left: 263px;
+    top: 113px;
+
+    font-size: 25px;
+  }
+
+  .grardRadio{
+    left: 70px;
+    top: 284px;
+  }
+
+  .cahRadio{
+    left: 70px;
+    top: 351px;
+  }
+
+  .applesRadio{
+    left: 70px;
+    top: 413px;
+  }
+
+  input[type="radio"] {
+    width: 30px;
+    height: 30px;
+  }
+
+  input[type="radio"]::before {
+    width: 22px;
+    height: 22px;
+  }
+
+  .line1{
+    width: 456px;
+    height: 0px;
+    left: 22px;
+    top: 192px;
+  }
+
+  .line2{
+    width: 456px;
+    height: 0px;
+    left: 22px;
+    top: 480px;
+  }
+
+  .line3{
+    visibility: hidden;
+  }
+}
+
+/* MEDIUM WINDOW */
+@media only screen and (min-width: 750px) and (max-width: 1200px){
+  .container{width: 750px;}
+
+  .title{
+    width: 622px;
+    height: 126px;
+    left: 64px;
+    top: 19px;
+
+    font-size: 90px;
+    -webkit-text-stroke: 2px black;
+  }
+
+  .errorCode{
+    width: 692px;
+    height: 90px;
+    left: 29px;
+    top: 644px;
+
+    font-size: 50px;
+    -webkit-text-stroke: 1px #BA1616;
+  }
+
+  .createButton{
+    width: 200px;
+    height: 84px;
+    left: 275px;
+    top: 545px;
+  }
+
+  .buttonText{
+    font-size: 45px;
+  }
+
+  .backArrow{
+    width: 43px;
+    height: 45px;
+    left: 27px;
+    top: 55px;
+
+    background-size: 43px;
+  }
+
+  .userNameLable{
+    width: 301px;
+    height: 82.19px;
+    left: 43px;
+    top: 166px;
+
+    font-size: 45px;
+  }
+
+  .userNameInput{
+    width: 260px;
+    height: 59px;
+    left: 324px;
+    top: 166px;
+
+    font-size: 30px;
+  }
+
+  .cardsetLabel{
+    width: 403px;
+    height: 61px;
+    left: 79px;
+    top: 252px;
+
+    font-size: 45px;
+    text-decoration-line: underline;
+    -webkit-text-stroke: .5px black;
+    text-align: left;
+  }
+
+  .grardLable{
+    width: 403px;
+    height: 67px;
+    left: 160px;
+    top: 315px;
+
+    font-size: 45px;
+    text-align: left;
+  }
+
+  .cahLable{
+    width: 548px;
+    height: 62px;
+    left: 160px;
+    top: 382px;
+
+    font-size: 45px;
+    text-align: left;
+  }
+
+  .applesLable{
+    width: 544px;
+    height: 68px;
+    left: 160px;
+    top: 444px;
+
+    font-size: 45px;
+    text-align: left;
+  }
+
+  .grardRadio{
+    left: 101px;
+    top: 329px;
+  }
+
+  .cahRadio{
+    left: 101px;
+    top: 396px;
+  }
+
+  .applesRadio{
+    left: 101px;
+    top: 458px;
+  }
+
+  input[type="radio"] {
+    width: 35px;
+    height: 35px;
+  }
+
+  input[type="radio"]::before {
+    width: 25px;
+    height: 25px;
+  }
+
+  .line1{
+    width: 0px;
+    height: 439px;
+    left: 56px;
+    top: 153px;
+  }
+
+  .line2{
+    width: 615px;
+    height: 0px;
+    left: 56px;
+    top: 248px;
+  }
+
+  .line3{
+    width: 615px;
+    height: 0px;
+    left: 56px;
+    top: 527px;
+  }
+
+}
+
+/* LARGE WINDOW */
+@media only screen and (min-width: 1200px){
+  .container{width: 1200px;}
+
+  .title{
+    width: 761px;
+    height: 147px;
+    left: 219px;
+    top: 30px;
+
+    font-size: 120px;
+    -webkit-text-stroke: 2px black;
+  }
+
+  .errorCode{
+    width: 1086px;
+    height: 90px;
+    left: 53px;
+    top: 605px;
+
+    font-size: 60px;
+    -webkit-text-stroke: 1px #BA1616;
+  }
+
+  .createButton{
+    width: 285px;
+    height: 123px;
+    left: 683px;
+    top: 424px;
+  }
+
+  .buttonText{
+    font-size: 70px;
+  }
+
+  .backArrow{
+    width: 92px;
+    height: 92px;
+    left: 53px;
+    top: 51px;
+
+    background-size: 92px;
+  }
+
+  .userNameLable{
+    width: 301px;
+    height: 83px;
+    left: 128px;
+    top: 210px;
+
+    font-size: 60px;
+  }
+
+  .userNameInput{
+    width: 400px;
+    height: 73px;
+    left: 477px;
+    top: 214px;
+
+    font-size: 40px;
+  }
+
+  .cardsetLabel{
+    width: 403px;
+    height: 61px;
+    left: 128px;
+    top: 329px;
+
+    font-size: 50px;
+    text-decoration-line: underline;
+    -webkit-text-stroke: .5px black;
+    text-align: left;
+  }
+
+  .grardLable{
+    width: 403px;
+    height: 111px;
+    left: 222px;
+    top: 392px;
+
+    font-size: 50px;
+    text-align: left;
+  }
+
+  .cahLable{
+    width: 548px;
+    height: 111px;
+    left: 222px;
+    top: 459px;
+
+    font-size: 50px;
+    text-align: left;
+  }
+
+  .applesLable{
+    width: 544px;
+    height: 111px;
+    left: 222px;
+    top: 521px;
+
+    font-size: 50px;
+    text-align: left;
+  }
+
+  .grardRadio{
+    left: 163px;
+    top: 406px;
+  }
+
+  .cahRadio{
+    left: 163px;
+    top: 473px;
+  }
+
+  .applesRadio{
+    left: 163px;
+    top: 535px;
+  }
+
+  input[type="radio"] {
+    width: 35px;
+    height: 35px;
+  }
+
+  input[type="radio"]::before {
+    width: 25px;
+    height: 25px;
+  }
+
+  .line1{
+    width: 0px;
+    height: 392.01px;
+    left: 97px;
+    top: 186px;
+  }
+
+  .line2{
+    width: 1009px;
+    height: 0px;
+    left: 99px;
+    top: 323px;
+  }
+
+  .line3{
+    visibility: hidden;
+  }
+
+}
