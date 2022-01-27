@@ -1,5 +1,5 @@
 # Grards
-###An online realtime cardgame 
+### An online realtime cardgame 
 
 This repository is for viewing a subsection of the code that runs [this](https://fungis.herokuapp.com/grards/) website. 
 These files are part of a django app that runs the game. 
